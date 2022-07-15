@@ -1,0 +1,15 @@
+.cardWidget{
+    display: flex;
+    font-size: 2rem;
+    padding: 2px 5px;
+    gap: 5px;
+}
+
+.cardWidget p{
+    margin: auto;
+}
+
+.cardWidget__icon{
+    margin: auto;
+    color: #61DAFB;
+}
