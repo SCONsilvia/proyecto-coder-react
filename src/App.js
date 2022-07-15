@@ -10,7 +10,7 @@ function App() {
       <header className="App-header">
         <Navbar />
         <CartWidget/>
-        <ItemListContainer text = "Bienvenidos a mi proyecto"/>
+        <ItemListContainer greeting = "Bienvenidos a mi proyecto"/>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
