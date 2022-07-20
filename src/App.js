@@ -6,13 +6,17 @@ import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import ItemCount from './components/ItemCount/ItemCount';
 
 function App() {
+  const onAdd = (cantidad) => {
+    console.log(`Agregaste ${cantidad} productos`);
+  };
+
   return (
     <div className="App">
       <header className="App-header">
         <Navbar />
         <CartWidget/>
         <ItemListContainer greeting = "Bienvenidos a mi proyecto"/>
-        <ItemCount initial={1} stock={10} onAdd={"lecsshuga"}/>
+        <ItemCount initial={1} stock={10} onAdd={onAdd}/>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.

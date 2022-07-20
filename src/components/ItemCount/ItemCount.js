@@ -29,7 +29,7 @@ const ItemCount = ({initial, stock, onAdd}) => {
                 <p className="itemCount__count">{count}</p>
                 <button className="itemCount__button" onClick={() => add(1)} disabled={disabledButtonIncrease}><FaAngleRight className="itemCount__button__icon"/></button>
             </div>
-            <button className="buttonAdd" onClick={() => console.log("Agrego "+count+" cantidad de " + onAdd)}>Agregar al carrito</button>
+            <button className="buttonAdd" onClick={() => onAdd(count)}>Agregar al carrito</button>
         </div>
     )
 }
