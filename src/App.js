@@ -3,6 +3,7 @@ import './App.css';
 import Navbar from './components/Navbar/Navbar';//importando componente
 import CartWidget from './components/CartWidget/CartWidget';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import ItemCount from './components/ItemCount/ItemCount';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Navbar />
         <CartWidget/>
         <ItemListContainer greeting = "Bienvenidos a mi proyecto"/>
+        <ItemCount initial={1} stock={10} onAdd={"lecsshuga"}/>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.

@@ -1,0 +1,53 @@
+.itemContentCount{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:10px
+}
+
+.itemCount{
+    display: flex;
+}
+
+.itemCount__button{
+    background-color: white;
+    border: none;
+    font-size: 2rem;
+    padding: 0;
+    display: flex;/*Para centrar el icono*/
+    cursor: pointer;
+}
+
+.itemCount__button__icon{
+    margin: auto;/*Para centrar el icono*/
+    color: #61DAFB;
+    padding: 5px;
+}
+
+.itemCount__button:disabled .itemCount__button__icon{
+    color:rgba(16, 16, 16, 0.3);
+}
+
+.itemCount__button:disabled{
+    cursor: auto;
+}
+
+.itemCount__count{
+    margin: 0;
+    padding: 5px 10px;
+    background-color: #61DAFB;
+    font-size: 2rem;
+}
+
+.buttonAdd{
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: #61DAFB;
+    color: white;
+}
+
+.buttonAdd:active{
+    box-shadow: rgba(16, 215, 222, 0.445) 0px 30px 60px -12px inset,rgba(18, 165, 219, 0.407) 0px 18px 36px -18px inset;
+}
