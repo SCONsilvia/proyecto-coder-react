@@ -3,6 +3,7 @@
     list-style: none;
     gap: 20px;
     padding: 0;
+    justify-content: center;
 }
 
 .navbar__lista__item{

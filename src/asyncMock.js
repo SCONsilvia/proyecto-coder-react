@@ -4,7 +4,7 @@ const products = [
         name : "God of war",
         price: 20,
         category : "Ps4",
-        img: "images/GodOfWar.jpg",
+        img: "images/GodOfWar.png",
         stock: 10,
         description : "Vive una aventura siendo un dios de la guerra que debe enfretar desafios junto a su hijo",
     },
