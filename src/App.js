@@ -15,7 +15,7 @@ function App() {
       <header className="App-header">
         <Navbar />
         <CartWidget/>
-        <ItemListContainer greeting = "Bienvenidos a mi proyecto"/>
+        <ItemListContainer greeting = "Productos"/>
         <ItemCount initial={1} stock={10} onAdd={onAdd}/>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
