@@ -2,7 +2,7 @@ import './App.css';
 import Header from './components/Header/Header';//importando componente
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ItemCount from './components/ItemCount/ItemCount';
-import ItemDetailContainer from './ItemDetailContainer/ItemDetailContainer';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 
 function App() {
   const onAdd = (cantidad) => {

@@ -1,6 +1,6 @@
-import { getProduct } from "../asyncMock";
+import { getProduct } from "../../asyncMock";
 import { useState, useEffect } from "react";
-import ItemDetail from "../components/ItemDetail/ItemDetail";
+import ItemDetail from "../ItemDetail/ItemDetail";
 
 const ItemDetailContainer = () => {
     const [product, setProduct] = useState({});
