@@ -1,4 +1,4 @@
-import { getProduct } from "../../asyncMock";
+import { getProduct } from "../../utils/asyncMock";
 import { useState, useEffect } from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
 
