@@ -1,0 +1,45 @@
+.productDetail{
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    border: 2px solid rosybrown;
+    margin: 20px;
+    width: 1000px;
+}
+.productDetail__ContainerImg{
+    grid-column: 1/ 2;
+    padding: 10px;
+}
+
+.productDetail__img{
+    width: 100%;
+}
+
+.productDetail__ContainerInfo{
+    grid-column: 2/ 3;
+    padding: 10px 20px;
+}
+
+.productDetail__ContainerInfo__name{
+    font-size: 2rem;
+    margin: 0;
+}
+
+.productDetail__ContainerInfo__category{
+    color: rgba(190, 190, 190, 0.581);
+    margin: 0;
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+.productDetail__ContainerInfo__description{
+    margin: 0;
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+    text-align: left;
+}
+
+.productDetail__ContainerInfo__price{
+    margin: 0;
+    font-size: 1.5rem;
+    text-align: right;
+}
