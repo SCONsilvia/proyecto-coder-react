@@ -4,7 +4,7 @@ const products = [
         name : "God of war",
         price: 20,
         category : "Ps4",
-        img: "images/GodOfWar.png",
+        img: "/images/GodOfWar.png",
         stock: 10,
         description : "Vive una aventura siendo un dios de la guerra que debe enfretar desafios junto a su hijo",
     },
@@ -13,7 +13,7 @@ const products = [
         name : "Zelda breath of the wild ",
         price: 60,
         category : "Nintendo switch",
-        img: "images/ZeldaBreathOfWheWild.jpg",
+        img: "/images/ZeldaBreathOfWheWild.jpg",
         stock: 20,
         description : "Excuse me, princess!",
     },
@@ -22,7 +22,7 @@ const products = [
         name : "Gear of war 3",
         price: 20,
         category : "Xbox360",
-        img: "images/GearsOfWar3.jpg",
+        img: "/images/GearsOfWar3.jpg",
         stock: 10,
         description : "Juego de disparo en tercera persona",
     }
@@ -48,5 +48,13 @@ export const getProduct = (id) => {
             }
             /* resolve(products.find( element => element.id === id)); */
         },2000)
+    })
+}
+
+export const getProductCategory = (categoryId) => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(products.filter(element => element.category === categoryId))
+        },2000);
     })
 }

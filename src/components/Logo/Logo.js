@@ -1,12 +1,15 @@
 import "./Logo.css";
 import { BsJoystick } from "react-icons/bs";
+import {Link} from "react-router-dom";
 
 const Logo = (() => {
     return(
-        <div className="logo">
-            <BsJoystick className="logo__logo"/>
-            <h1 className="logo__title">Game Store</h1>
-        </div>
+        <Link to="/">
+            <div className="logo">
+                <BsJoystick className="logo__logo"/>
+                <h1 className="logo__title">Game Store</h1>
+            </div>
+        </Link>
     )
 })
 

@@ -1,7 +1,7 @@
 import "./ItemDetail.css"
 
-const ItemDetail = ({product}) => {
-    const {id, name, price, description, category, img} = product;
+const ItemDetail = ({id, name, price, description, category, img}) => {
+    console.log(img);
 
     return(
         <article key={id} className="productDetail">

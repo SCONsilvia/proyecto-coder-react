@@ -1,9 +1,14 @@
+a{
+    color: white;
+    text-decoration: none;
+}
+
 .item{
     width: 260px;
     display: flex;
     flex-direction: column;
     border: solid 1px #61DAFB;
-    cursor: pointer;
+    height: 100%;
 }
 
 .item__imgContainer{
