@@ -1,7 +1,12 @@
+import ItemCount from "../ItemCount/ItemCount";
 import "./ItemDetail.css"
 
-const ItemDetail = ({id, name, price, description, category, img}) => {
+const ItemDetail = ({id, name, price, description, category, img, stock}) => {
     console.log(img);
+
+    const onAdd = (cantidad) => {
+        console.log(`Agregaste ${cantidad} productos`);
+    };
 
     return(
         <article key={id} className="productDetail">
@@ -13,6 +18,7 @@ const ItemDetail = ({id, name, price, description, category, img}) => {
                 <p className= "productDetail__ContainerInfo__category">{category}</p>
                 <p className= "productDetail__ContainerInfo__description">Descripcion: {description}</p>
                 <p className= "productDetail__ContainerInfo__price">US${price}</p>
+                <ItemCount initial={1} stock={stock} onAdd={onAdd}/>
             </div>
         </article>
     )
