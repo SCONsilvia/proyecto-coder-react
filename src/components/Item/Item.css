@@ -10,6 +10,12 @@ a{
     border: solid 1px #61DAFB;
     height: 100%;
 }
+.j{
+    position: relative;
+}
+.h{
+    position: absolute;
+}
 
 .item__imgContainer{
     height: 260px;
