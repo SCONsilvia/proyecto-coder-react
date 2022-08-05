@@ -3,8 +3,8 @@ import { FaAngleRight } from "react-icons/fa";
 import { FaAngleLeft } from "react-icons/fa";
 import { useState } from "react"
 
-const ItemCount = ({initial, stock, onAdd}) => {
-    const [count, setCount] = useState(1);
+const ItemCount = ({initial=1, stock, onAdd}) => {
+    const [count, setCount] = useState(initial);
 
     const add = (sum) => {
         setCount(count+sum);
@@ -14,7 +14,7 @@ const ItemCount = ({initial, stock, onAdd}) => {
     return(
         <div className="itemContentCount">
             <div className="itemCount">
-                <button className="itemCount__button" onClick={() => add(-1)} disabled={count === initial}><FaAngleLeft className="itemCount__button__icon"/></button>
+                <button className="itemCount__button" onClick={() => add(-1)} disabled={count === 1}><FaAngleLeft className="itemCount__button__icon"/></button>
                 <p className="itemCount__count">{count}</p>
                 <button className="itemCount__button" onClick={() => add(1)} disabled={count === stock}><FaAngleRight className="itemCount__button__icon"/></button>
             </div>

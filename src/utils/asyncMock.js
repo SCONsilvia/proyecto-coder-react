@@ -33,7 +33,7 @@ export const getProducts = () => {
     return new Promise((resolve) => {
         setTimeout(() => {
             resolve(products)
-        },2000)
+        },10)
     })
 }
 
@@ -46,7 +46,6 @@ export const getProduct = (id) => {
             }else{
                 reject("Ocurrio un error");
             }
-            /* resolve(products.find( element => element.id === id)); */
         },2000)
     })
 }
