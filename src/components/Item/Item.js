@@ -13,21 +13,14 @@ const Item = ({product}) =>{
     }
 
     return(
-        <Link to={`/detail/${id}`}>
+        /* <Link to={`/detail/${id}`}> */
+        <button onClick={() => console.log("hola")} >
             <article className="item">
                 {heartActive ? <FaHeart onClick={active}/> : <FaRegHeart onClick={active}/>}
-                <div className="item__imgContainer">
-                    <img className="item__imgContainer__img" alt={"Imagen de " + name} src={img}/>
-                </div>
-                <div className="item__info">
-                    <h2 className="item__info__title" >{name}</h2>
-                    <p className="item__info__price">US${price}</p>
-                </div>
-                <div className="item__containerStock">
-                    <p className="item__containerStock__stock">Stock {stock}</p>
-                </div>
+                
             </article>
-        </Link>
+        </button>
+        /* </Link> */
     )
 }
 
