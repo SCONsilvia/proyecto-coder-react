@@ -1,3 +1,9 @@
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .navbar__lista{
     display: flex;
     list-style: none;
@@ -7,6 +13,8 @@
 }
 
 .navbar__lista__item{
+    display: flex;
+    width: auto;
     color: white;
     text-decoration: none;
     font-size: 20px;
@@ -14,7 +22,6 @@
     background-color: #61DAFB;
     padding: 10px 13px;
     border-radius: 12px;
-    width: 350px;
     transition: 0.3s;
 }
 
