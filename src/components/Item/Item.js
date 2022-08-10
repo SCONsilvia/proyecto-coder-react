@@ -1,9 +1,10 @@
 import "./Item.css"
-import {Link} from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 import { useState } from "react"
 import { FaRegHeart, FaHeart } from "react-icons/fa";
 
 const Item = ({product}) =>{
+    const navigate = useNavigate();
     const {id, name, price, img, stock} = product;
     const [heartActive, setHeartActive] = useState(false);
 
@@ -14,12 +15,12 @@ const Item = ({product}) =>{
 
     return(
         /* <Link to={`/detail/${id}`}> */
-        <button onClick={() => console.log("hola")} >
-            <article className="item">
+        /* <button onClick={() => console.log("hola")} > */
+            <article className="item" onClick={() => navigate(`/detail/${id}`)}>
                 {heartActive ? <FaHeart onClick={active}/> : <FaRegHeart onClick={active}/>}
                 
             </article>
-        </button>
+        /* </button> */
         /* </Link> */
     )
 }
