@@ -8,7 +8,6 @@ const Cart = () => {
     const {cart, getTotalAllProducts, clear} = useContext(CartContext);
     const total = getTotalAllProducts();
 
-    console.log(cart);
     return(
         <section className="cart">
             <p className={"cart__text " + "cart__title"}>Carrito</p>

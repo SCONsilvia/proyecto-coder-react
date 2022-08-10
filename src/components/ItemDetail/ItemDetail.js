@@ -27,7 +27,7 @@ const ItemDetail = ({id, name, price, description, category, img, stock,ann}) =>
                 <p className= "productDetail__ContainerInfo__category">{category}</p>
                 <p className= "productDetail__ContainerInfo__description">Descripcion: {description}</p>
                 <p className= "productDetail__ContainerInfo__price">US${price}</p>
-                { quantity > 0 ? <Link to="/cart">Ir al carrito</Link> : <ItemCount initial={quantityAdded} stock={stock} onAdd={onAdd}/>}
+                { quantity > 0 ? <Link to="/cart"><button className="cart__button">Terminar Compra</button></Link> : <ItemCount initial={quantityAdded} stock={stock} onAdd={onAdd}/>}
             </div>
         </article>
     )
