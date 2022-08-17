@@ -11,25 +11,3 @@
     padding: 0;
     justify-content: center;
 }
-
-.navbar__lista__item{
-    display: flex;
-    width: auto;
-    color: white;
-    text-decoration: none;
-    font-size: 20px;
-    border: 2px solid #61DAFB;
-    background-color: #61DAFB;
-    padding: 10px 13px;
-    border-radius: 12px;
-    transition: 0.3s;
-}
-
-.navbar__lista__item:hover{
-    background-color: white;
-    color: black;
-}
-
-.navbar__lista__item:active{
-    box-shadow: rgba(16, 215, 222, 0.445) 0px 30px 60px -12px inset,rgba(18, 165, 219, 0.407) 0px 18px 36px -18px inset;
-}
