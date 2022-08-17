@@ -2,7 +2,7 @@ import './App.css';
 import Header from './components/Header/Header';//importando componente
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
-import Cart from './components/Cart/Cart';
+import CartListContainer from './components/CartListContainer/CartListContainer';
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import { CartContextProvide } from './context/CartContext';
 
@@ -16,7 +16,7 @@ function App() {
             <Route path="/" element={<ItemListContainer greeting = "Productos"/>}/>
             <Route path="/category/:categoryId" element={<ItemListContainer greeting = "Productos"/>}/>
             <Route path="/detail/:productId" element={<ItemDetailContainer/>}/>
-            <Route path="/cart" element={<Cart/>}/>
+            <Route path="/cart" element={<CartListContainer/>}/>
           </Routes>
         </BrowserRouter>
       </CartContextProvide>

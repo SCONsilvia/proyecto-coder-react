@@ -1,13 +1,10 @@
 import "./CartItem.css"
-import { CartContext } from "../../context/CartContext"
-import { useContext } from "react"
 import { useNavigate } from "react-router-dom"
 
-const CartItem = ({id, name, price, quantity}) =>{
+const CartItem = ({id, name, price, quantity, removeItem}) =>{
     const navigate = useNavigate()
-    const {removeItem} = useContext(CartContext);
     
-    const a = (e) =>{
+    const remove1Item = (e) =>{
         e.stopPropagation();
         removeItem(id)
     }
@@ -18,7 +15,7 @@ const CartItem = ({id, name, price, quantity}) =>{
             <p className="cart__ContainerItems__item__info">Cantidad: {quantity}</p>
             <p className="cart__ContainerItems__item__info">Precio: ${price}</p>
             <p className="cart__ContainerItems__item__info">SubTotal: ${quantity * price}</p>
-            <button className="cart__ContainerItems__item__buttonRemove" onClick={a}>X</button>
+            <button className="cart__ContainerItems__item__buttonRemove" onClick={remove1Item}>X</button>
         </li>
     )
 }
