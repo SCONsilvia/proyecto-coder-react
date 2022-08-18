@@ -29,18 +29,22 @@ export const CartContextProvide = ({children}) => {
         if(!isInCart(newItem.id)){
             setCart([...cart,newItem]);
         }else{
-            const cartUpdated = cart.map(element => {
-                if(element.id === newItem.id){
-                    const productUpdated = {...element, quantity:newItem.quantity}
-                    
-                    return productUpdated
-                }else{
-                    return element;
-                }
-            })
-
-            setCart(cartUpdated)
+            modificarCantidadDelCarrito(newItem.id, newItem.quantity);
         }
+    }
+
+    const modificarCantidadDelCarrito = (id, quantity) => {
+        const cartUpdated = cart.map(element => {
+            if(element.id === id){
+                const productUpdated = {...element, quantity:quantity}
+                
+                return productUpdated
+            }else{
+                return element;
+            }
+        })
+
+        setCart(cartUpdated)
     }
 
     const getProductQuantity = (id) => {
@@ -57,7 +61,7 @@ export const CartContextProvide = ({children}) => {
     }    
 
     return(
-        <CartContext.Provider value={{cart, addItem, getProductQuantity,getTotalItem, getTotalAllProducts, removeItem, clear}}>
+        <CartContext.Provider value={{cart, addItem, getProductQuantity,getTotalItem, getTotalAllProducts, removeItem, clear, modificarCantidadDelCarrito}}>
             {children}
         </CartContext.Provider>
     )

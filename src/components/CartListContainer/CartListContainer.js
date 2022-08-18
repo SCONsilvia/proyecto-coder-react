@@ -24,6 +24,7 @@ const CartListContainer = () => {
                         <CartList/>
                     </ul>
                     <p className="cart__text">Total: {total}</p>
+                    <Link to="/checkout"><button className="cart__button">Finalizar compra</button></Link>
                     <button className="cart__button" onClick={() => clear()}>Borrar Todo</button>
                 </>
             }

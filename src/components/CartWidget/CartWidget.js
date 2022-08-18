@@ -8,6 +8,7 @@ const CartWidget = () => {
     const {getTotalItem} = useContext(CartContext)
 
     const total = getTotalItem();
+    
 
     return (
         <div className="cardWidget">
