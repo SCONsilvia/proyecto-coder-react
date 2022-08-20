@@ -1,5 +1,5 @@
 import "./Navbar.css"//Importo el css
-import NavbarListItem from "../NavbarListItem/NavbarListItem";
+import NavbarListItem from "../NavbarListContainer/NavbarListContainer";
 
 const Navbar = () =>{
     return(

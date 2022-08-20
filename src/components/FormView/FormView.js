@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 import "./FormView.css"
 
 const FormView = ({data}) =>{
-    const {name, setName, email, setEmail, phone, setPhone, funcForm, purchaseCompleted, itemOutStock} = data;
+    const {name, setName, email, setEmail, phone, setPhone, funcForm, purchaseCompleted, itemOutStock,buttonDisabled} = data;
 
     const mensaje = purchaseCompleted !== "" && itemOutStock.length === 0 ? `Compra realizada su codigo de compra es: ${purchaseCompleted}` : "Lo sentimos pero hay productos que superan el stock"
 
@@ -32,7 +32,7 @@ const FormView = ({data}) =>{
                     </label>
                 </li>
             </ul>
-            <button type="submit" className={"navbar__lista__item" + " purchaseForm__button"}>Generar orden</button>
+            <button type="submit" className={"navbar__lista__item" + " purchaseForm__button"} disabled={buttonDisabled}>Generar orden</button>
         </form>
     )
 }

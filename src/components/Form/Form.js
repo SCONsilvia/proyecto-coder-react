@@ -1,4 +1,3 @@
-import "./Form.css"
 import { useContext, useEffect, useState } from "react";
 import { CartContext } from "../../context/CartContext";
 import { GenerateOrder } from "../GenerateOrder/GenerateOrder";
@@ -10,6 +9,8 @@ const Form = () =>{
     const [phone, setPhone] = useState("");
     const [purchaseCompleted, setpurchaseCompleted] = useState("");
     const [itemOutStock, setItemOutStock] = useState([]);
+
+    const [buttonDisable, setButtonDisable] = useState(false);
 
     const {cart, getTotalAllProducts, clear, removeItem, modificarCantidadDelCarrito} = useContext(CartContext);
     const total = getTotalAllProducts();
@@ -28,6 +29,7 @@ const Form = () =>{
     const newOrder = (e) => {
         e.preventDefault();
         GenerateOrder(data);
+        setButtonDisable(true);
     }
 
     const data = {
@@ -48,6 +50,8 @@ const Form = () =>{
         removeItem : removeItem,
         modificarCantidadDelCarrito : modificarCantidadDelCarrito,
         total,
+        buttonDisable, 
+        setButtonDisable,
     }
 
     return(

@@ -1,7 +1,7 @@
-import { addDoc, collection, documentId, getDocs, query, where, writeBatch } from "firebase/firestore";
-import { db } from "../../services/firebase";
+import { listProductsAddedFromFirestore } from "../../services/firebase/firestore";
+import { cambiosParaFireStore } from "../../services/firebase/firestore";
 
-export const GenerateOrder = (data) => {
+export const GenerateOrder = async (data) => {
     const {name,email,phone,setpurchaseCompleted, cart, total, clear,setItemOutStock} = data;
     
     const objOrder = {
@@ -12,38 +12,33 @@ export const GenerateOrder = (data) => {
         total
     }
     
-    const ids = cart.map(prod => prod.id);
-    
-    getDocs(query(collection(db, "products"), where(documentId(), "in" , ids))).then(reponse =>{
-        const productsAddedFromFirestote = reponse;
-        const {docs} = productsAddedFromFirestote;
+    const ids = objOrder.items.map(prod => prod.id);
 
-        const outOfStock = [];
-        const batch = writeBatch(db);
+    const productsAddedFromFirestore = await listProductsAddedFromFirestore(ids);
+    const {docs} = productsAddedFromFirestore;
 
-        docs.forEach(doc => {
-            const dataDoc = doc.data();
-            const productAdded = cart.find(prod => prod.id === doc.id);
-            const prodQuantity = productAdded.quantity;
-            const stockDb = dataDoc.stock;
+    const outOfStock = [];
+    const batch = new cambiosParaFireStore();
+
+    docs.forEach(doc => {
+        const dataDoc = doc.data();
+        const productAdded = objOrder.items.find(prod => prod.id === doc.id);
+        const prodQuantity = productAdded.quantity;
+        const stockDb = dataDoc.stock;
             
-            if(stockDb >= prodQuantity){
-                batch.update(doc.ref, {stock : stockDb - prodQuantity})
-            }else{
-                outOfStock.push({id:doc.id, ...dataDoc});
-            }
-        })
-
-        if (outOfStock.length === 0) {
-            addDoc(collection(db, "orders"), objOrder).then(reponse =>{
-                batch.commit();
-                console.log(reponse.id);
-                clear();
-                setpurchaseCompleted(reponse.id);
-            })
+        if(stockDb >= prodQuantity){
+            batch.actualizarBatch(doc.ref, {stock : stockDb - prodQuantity});
         }else{
-            setItemOutStock(outOfStock);
+            outOfStock.push({id:doc.id, ...dataDoc});
         }
     })
+
+    if (outOfStock.length === 0) {
+        const idDeOrden = await batch.actualizarBatch2(objOrder);
+        clear();
+        setpurchaseCompleted(idDeOrden);
+    }else{
+        setItemOutStock(outOfStock);
+    }
     
 }

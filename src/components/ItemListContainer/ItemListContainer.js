@@ -1,42 +1,31 @@
 import "./ItemListContainer.css"
 import ItemList from "../ItemList/ItemList"
-import {useState, useEffect} from "react"
 import { useParams } from "react-router-dom"
-import { getDocs, collection, query, where } from "firebase/firestore"
-import { db } from "../../services/firebase/index"
-
+import { useAsync } from "../../hooks/useAsync"
+import { getProducts } from "../../services/firebase/firestore"
 
 const ItemListContainer = ({greeting }) => {
-    const [products, setProducts] = useState([]);
-    const [loading, setLoading] = useState(true);
-
     const {categoryId} = useParams();
+
+    const { loading, data, error } = useAsync((()=>getProducts("products", categoryId)),[categoryId]);
     
-    useEffect(() => {
-        const collectionRef = !categoryId ? collection(db, "products") : query(collection(db, "products"), where("category", "==", categoryId))
-
-        getDocs(collectionRef).then(reponse => {
-            const products = reponse.docs.map(doc => {
-                const values = doc.data()
-                return { id: doc.id , ...values}
-            })
-            setProducts(products);
-        }).catch(error => {
-            console.log(error);
-        }).finally(() => {
-            setLoading(false);
-        })
-
-    },[categoryId]);
 
     if(loading) {
         return <h1>Cargando productos...</h1>
     }
 
+    if(error){
+        return <p>Acaba de ocurrir un error</p>
+    }
+
+    if(data >= 0){
+        return <p>No hay productos para mostar</p>
+    }
+
     return(
         <section>
             <h1>{greeting}</h1>
-            <ItemList products ={products}/>
+            <ItemList products ={data}/>
         </section>
     )
 }
