@@ -3,7 +3,7 @@ import NavbarList from "../NavbarList/NavbarList";
 import { getProducts } from "../../services/firebase/firestore";
 
 const NavbarListItem = () => {
-    const {loading, data, error } = useAsync((()=>getProducts("categories")))
+    const {loading, data, error } = useAsync((()=>getProducts("categories")));
 
     if (loading) {
         return <h1>Cargando categorias...</h1>

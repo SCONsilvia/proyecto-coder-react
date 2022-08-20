@@ -1,12 +1,12 @@
-import "./CartItem.css"
-import { useNavigate } from "react-router-dom"
+import "./CartItem.css";
+import { useNavigate } from "react-router-dom";
 
 const CartItem = ({id, name, price, quantity, removeItem}) =>{
-    const navigate = useNavigate()
+    const navigate = useNavigate();
     
     const remove1Item = (e) =>{
         e.stopPropagation();
-        removeItem(id)
+        removeItem(id);
     }
 
     return(
@@ -20,4 +20,4 @@ const CartItem = ({id, name, price, quantity, removeItem}) =>{
     )
 }
 
-export default CartItem
+export default CartItem;

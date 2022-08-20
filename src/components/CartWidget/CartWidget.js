@@ -1,11 +1,11 @@
-import "./CartWidget.css"
+import "./CartWidget.css";
 import { FaShoppingCart } from "react-icons/fa";
 import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
 
 
 const CartWidget = () => {
-    const {getTotalItem} = useContext(CartContext)
+    const {getTotalItem} = useContext(CartContext);
 
     const total = getTotalItem();
     
@@ -18,4 +18,4 @@ const CartWidget = () => {
     )
 }
 
-export default CartWidget
+export default CartWidget;

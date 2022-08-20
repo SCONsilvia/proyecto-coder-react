@@ -1,5 +1,5 @@
 import ItemDetail from "../ItemDetail/ItemDetail";
-import { useParams } from "react-router-dom"
+import { useParams } from "react-router-dom";
 import { useAsync } from "../../hooks/useAsync";
 import { getProduct } from "../../services/firebase/firestore";
 
@@ -19,4 +19,4 @@ const ItemDetailContainer = () => {
     )
 }
 
-export default ItemDetailContainer
+export default ItemDetailContainer;

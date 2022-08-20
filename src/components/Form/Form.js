@@ -51,7 +51,6 @@ const Form = () =>{
         modificarCantidadDelCarrito : modificarCantidadDelCarrito,
         total,
         buttonDisabled,
-        setButtonDisabled
     }
 
     return(

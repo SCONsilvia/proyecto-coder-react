@@ -1,8 +1,7 @@
-import "./ItemListContainer.css"
-import ItemList from "../ItemList/ItemList"
-import { useParams } from "react-router-dom"
-import { useAsync } from "../../hooks/useAsync"
-import { getProducts } from "../../services/firebase/firestore"
+import ItemList from "../ItemList/ItemList";
+import { useParams } from "react-router-dom";
+import { useAsync } from "../../hooks/useAsync";
+import { getProducts } from "../../services/firebase/firestore";
 
 const ItemListContainer = ({greeting }) => {
     const {categoryId} = useParams();
@@ -30,4 +29,4 @@ const ItemListContainer = ({greeting }) => {
     )
 }
 
-export default ItemListContainer
+export default ItemListContainer;

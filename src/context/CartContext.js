@@ -1,4 +1,4 @@
-import { createContext, useState } from "react"
+import { createContext, useState } from "react";
 
 export const CartContext = createContext();
 
@@ -6,7 +6,7 @@ export const CartContextProvide = ({children}) => {
     const [cart, setCart] = useState([]);
 
     const isInCart = (id) => {
-        return (cart.some((element) => element.id === id))
+        return (cart.some((element) => element.id === id));
     }
 
     const removeItem = (id) => {
@@ -36,21 +36,21 @@ export const CartContextProvide = ({children}) => {
     const modificarCantidadDelCarrito = (id, quantity) => {
         const cartUpdated = cart.map(element => {
             if(element.id === id){
-                const productUpdated = {...element, quantity:quantity}
+                const productUpdated = {...element, quantity:quantity};
                 
-                return productUpdated
+                return productUpdated;
             }else{
                 return element;
             }
         })
 
-        setCart(cartUpdated)
+        setCart(cartUpdated);
     }
 
     const getProductQuantity = (id) => {
         const product = cart.find((element) => element.id === id);
 
-        return product?.quantity
+        return product?.quantity;
     }
 
     const getTotalAllProducts = () => {

@@ -1,4 +1,4 @@
-import "./Navbar.css"//Importo el css
+import "./Navbar.css";//Importo el css
 import NavbarListItem from "../NavbarListContainer/NavbarListContainer";
 
 const Navbar = () =>{
@@ -11,4 +11,4 @@ const Navbar = () =>{
     )
 }
 
-export default Navbar//para exportar el navbar
+export default Navbar;//para exportar el navbar

@@ -1,7 +1,7 @@
-import "./ItemCount.css"
+import "./ItemCount.css";
 import { FaAngleRight } from "react-icons/fa";
 import { FaAngleLeft } from "react-icons/fa";
-import { useState } from "react"
+import { useState } from "react";
 
 const ItemCount = ({initial=1, stock, onAdd}) => {
     const [count, setCount] = useState(initial);

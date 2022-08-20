@@ -1,5 +1,5 @@
-import "./NavbarItem.css"
-import { Link } from "react-router-dom";
+import "./NavbarItem.css";
+import { Link } from "react-router-dom";;
 
 const NavbarItem = ({id, description}) => {
     return(

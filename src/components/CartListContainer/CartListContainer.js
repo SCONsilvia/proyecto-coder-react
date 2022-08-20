@@ -1,7 +1,7 @@
-import "./CartListContainer.css"
-import { Link } from "react-router-dom"
-import { CartContext } from "../../context/CartContext"
-import { useContext } from "react"
+import "./CartListContainer.css";
+import { Link } from "react-router-dom";
+import { CartContext } from "../../context/CartContext";
+import { useContext } from "react";
 import CartList from "../CartList/CartList";
 
 const CartListContainer = () => {
@@ -10,7 +10,7 @@ const CartListContainer = () => {
 
     return(
         <section className="cart">
-            <p className={"cart__text " + "cart__title"}>Carrito</p>
+            <p className={"cart__text cart__title"}>Carrito</p>
             {!cart.length > 0 && 
                 <>
                     <p>El carrito esta vacio</p>
@@ -32,4 +32,4 @@ const CartListContainer = () => {
     )
 }
 
-export default CartListContainer
+export default CartListContainer;
