@@ -1,0 +1,33 @@
+.purchaseForm{
+    background-color: #5b6b6f;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.purchaseForm ul li{
+    list-style: none ;
+    margin-bottom: 10px;
+
+}
+
+.purchaseForm ul li label{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 10px;
+    text-align: left;
+}
+
+.purchaseForm ul li label input{
+    border-radius: 5px;
+    border: none;
+}
+
+.purchaseForm__button{
+    cursor: pointer;
+    margin: 0 auto;
+}
+
+.purchaseForm__button:disabled{
+    background-color: gray;
+    border-color: gray;
+}

@@ -1,27 +1,22 @@
-import { getProduct } from "../../utils/asyncMock";
-import { useState, useEffect } from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
-import { useParams } from "react-router-dom"
+import { useParams } from "react-router-dom";
+import { useAsync } from "../../hooks/useAsync";
+import { getProduct } from "../../services/firebase/firestore";
 
 const ItemDetailContainer = () => {
-    const [product, setProduct] = useState({});
-    const [loading, setLoading] = useState(true);
-
     const { productId } = useParams();
 
-    useEffect(()=>{
-        getProduct(productId).then(response =>{
-            setProduct(response);
-        }).catch(error => {
-            setLoading(false);
-        })
-    },[productId]);
+    const {data, error, loading} = useAsync((() => getProduct(productId)),[productId]);
+
+    if(error){
+        return <p>Acaba de ocurrir un error</p>
+    }
 
     return(
         <div>
-            {product.hasOwnProperty("id")? <ItemDetail {...product}/> : (loading ? <p>Cargando Detalles</p> : <p>No se pudo cargar el detalle del producto</p>)}
+            {data && data.hasOwnProperty("name")? <ItemDetail {...data}/> : (loading ? <p>Cargando Detalles</p> : <p>No se pudo cargar el detalle del producto</p>)}
         </div>
     )
 }
 
-export default ItemDetailContainer
+export default ItemDetailContainer;

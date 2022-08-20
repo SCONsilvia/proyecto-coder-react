@@ -1,16 +1,16 @@
-import "./Cart.css"
-import CartItem from "../CartItem/CartItem"
-import { CartContext } from "../../context/CartContext"
-import { useContext } from "react"
-import { Link } from "react-router-dom"
+import "./CartListContainer.css";
+import { Link } from "react-router-dom";
+import { CartContext } from "../../context/CartContext";
+import { useContext } from "react";
+import CartList from "../CartList/CartList";
 
-const Cart = () => {
+const CartListContainer = () => {
     const {cart, getTotalAllProducts, clear} = useContext(CartContext);
     const total = getTotalAllProducts();
 
     return(
         <section className="cart">
-            <p className={"cart__text " + "cart__title"}>Carrito</p>
+            <p className={"cart__text cart__title"}>Carrito</p>
             {!cart.length > 0 && 
                 <>
                     <p>El carrito esta vacio</p>
@@ -21,9 +21,10 @@ const Cart = () => {
             {cart.length > 0 && 
                 <>
                     <ul className="cart__ContainerItems">
-                        {cart.map(item => (<CartItem key={item.id} {...item}/>))}
+                        <CartList/>
                     </ul>
                     <p className="cart__text">Total: {total}</p>
+                    <Link to="/checkout"><button className="cart__button">Finalizar compra</button></Link>
                     <button className="cart__button" onClick={() => clear()}>Borrar Todo</button>
                 </>
             }
@@ -31,4 +32,4 @@ const Cart = () => {
     )
 }
 
-export default Cart
+export default CartListContainer;
