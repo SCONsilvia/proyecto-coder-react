@@ -4,7 +4,7 @@ Proyecto desarrollado en el curso de React CoderHouse
 
 Es un Ecomerce que muestra productos, se puede visualizar por detalle o categoria.
 
-![Uploading gif.gif…]()
+![gif.gif]()
 
 ## Como ejecutar el proyecto
 
