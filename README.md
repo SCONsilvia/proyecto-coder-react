@@ -40,3 +40,4 @@ Ruta detail "/detail/<productId>" Para acceder a esto debes dar click en uno de 
 Ruta carrito "/cart" Para acceder a esto debes dar click en el carrito o en terminar compra cuando estes en el detalle del producto, el icono del carrito solo aparece cuando tienes algo agregado al carrito.
 
 Ruta finalizar compra "/checkout" Para acceder a esto debes tener productos en el carrito ir al carrito y dar click al boton finalizar compra eso te llevara al formulario de compra
+
