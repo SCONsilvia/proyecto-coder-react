@@ -4,6 +4,8 @@ Proyecto desarrollado en el curso de React CoderHouse
 
 Es un Ecomerce que muestra productos, se puede visualizar por detalle o categoria.
 
+![Uploading gif.gif…]()
+
 ## Como ejecutar el proyecto
 
 0) instalar node.js version 16.14.0 npm 8.3.1
