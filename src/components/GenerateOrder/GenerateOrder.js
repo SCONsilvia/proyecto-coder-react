@@ -1,5 +1,5 @@
 import { listProductsAddedFromFirestore } from "../../services/firebase/firestore";
-import { cambiosParaFireStore } from "../../services/firebase/firestore";
+import { changesForFirestore } from "../../services/firebase/firestore";
 
 export const GenerateOrder = async (data) => {
     const {name,email,phone,setpurchaseCompleted, cart, total, clear,setItemOutStock} = data;
@@ -18,7 +18,7 @@ export const GenerateOrder = async (data) => {
     const {docs} = productsAddedFromFirestore;
 
     const outOfStock = [];
-    const batch = new cambiosParaFireStore();
+    const batch = new changesForFirestore();
 
     docs.forEach(doc => {
         const dataDoc = doc.data();
@@ -27,14 +27,14 @@ export const GenerateOrder = async (data) => {
         const stockDb = dataDoc.stock;
             
         if(stockDb >= prodQuantity){
-            batch.actualizarBatch(doc.ref, {stock : stockDb - prodQuantity});
+            batch.loadDataToSave(doc.ref, {stock : stockDb - prodQuantity});
         }else{
             outOfStock.push({id:doc.id, ...dataDoc});
         }
     })
 
     if (outOfStock.length === 0) {
-        const idDeOrden = await batch.actualizarBatch2(objOrder);
+        const idDeOrden = await batch.updateBatch(objOrder);
         clear();
         setpurchaseCompleted(idDeOrden);
     }else{

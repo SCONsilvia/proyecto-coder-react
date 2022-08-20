@@ -34,17 +34,17 @@ export const listProductsAddedFromFirestore = (ids) => {
     })
 }
 
-export class cambiosParaFireStore{
+export class changesForFirestore{
     constructor() {
        
         this.batch = writeBatch(db);
     }   
 
-    actualizarBatch(ref, modificacion){
+    loadDataToSave(ref, modificacion){
         this.batch.update(ref, modificacion);
     }
 
-    actualizarBatch2(objOrder){
+    updateBatch(objOrder){
         return addDoc(collection(db, "orders"), objOrder).then(reponse =>{
             this.batch.commit();
             return reponse.id;
